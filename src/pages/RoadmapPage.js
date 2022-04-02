@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import articleContent from "./article-content";
 import {
@@ -11,26 +11,18 @@ import {
   Checkbox,
 } from "@mui/material";
 
-function RoadmapPage() {
+function RoadmapPage({ checked, setChecked }) {
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const [checked, setChecked] = useState(false);
-
   function checkedChange() {
     setChecked(
       document.querySelectorAll("input[type=checkbox]:checked").length
     );
   }
-  useEffect(() => {
-    console.log(
-      checked,
-      document.querySelectorAll("input[type=checkbox]").length
-    );
-  }, [checked]);
 
   return (
     <div>
