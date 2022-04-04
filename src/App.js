@@ -8,7 +8,9 @@ import ArticlePage from "./pages/ArticlePage";
 import NavBar from "./NavBar";
 
 function App() {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(
+    localStorage.getItem("checked") === "true"
+  );
   return (
     <div className="App">
       <NavBar checked={checked} />
