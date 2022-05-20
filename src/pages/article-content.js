@@ -1,6 +1,7 @@
 const articles = [
   {
     name: "internet",
+    id: 1,
     title: "Internet",
     content: [
       "How does the internet work?",
@@ -13,6 +14,7 @@ const articles = [
   },
   {
     name: "html",
+    id: 2,
     title: "HTML",
     content: [
       "Basics",
@@ -24,15 +26,22 @@ const articles = [
   },
   {
     name: "css",
+    id: 3,
     title: "CSS",
     content: [
       "Basics",
-      "Layouts: floats, positioning, display, box model, CSS grid, flex box",
+      "Pseudo-classes",
+      "Box model",
+      "Flexbox",
+      "Grid",
+      "Positioning",
+      "Units (px,em,rem,vh)",
       "Responsive design and Media Queries",
     ],
   },
   {
     name: "js",
+    id: "4",
     title: "JavaScript",
     content: [
       "Syntax and Basic construction",
@@ -44,11 +53,19 @@ const articles = [
   },
   {
     name: "vcs",
+    id: "5",
     title: "Version Control Systems",
-    content: ["GIT", "GitHub"],
+    content: [
+      "Git - initiate a repository",
+      "Git - stage/unstage changes",
+      "Git - commit",
+      "Git - push",
+      "GitHub",
+    ],
   },
   {
     name: "security",
+    id: "6",
     title: "Web Security",
     content: [
       "HTTPS",
@@ -59,11 +76,13 @@ const articles = [
   },
   {
     name: "package-managers",
+    id: "7",
     title: "Package Managers",
     content: ["npm", "yarn"],
   },
   {
     name: "css-additional",
+    id: "8",
     title: "CSS Preprocessors, Architecture, Modern CSS and Frameworks",
     content: [
       "BEM",
@@ -78,6 +97,7 @@ const articles = [
   },
   {
     name: "build-tools",
+    id: "9",
     title: "Build Tools",
     content: [
       "task runners - npm scripts",
@@ -87,11 +107,22 @@ const articles = [
   },
   {
     name: "react",
+    id: "10",
     title: "React",
-    content: ["react "],
+    content: [
+      "React Elements",
+      "React Fragments",
+      "React Components",
+      "React Props",
+      "React Conditonals",
+      "React Lists",
+      "React Contex",
+      "React Hooks",
+    ],
   },
   {
     name: "web-components",
+    id: "11",
     title: "Web Components",
     content: ["HTML Templates", "Custom Elements", "Shadow DOM"],
   },

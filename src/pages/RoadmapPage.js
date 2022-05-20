@@ -18,18 +18,16 @@ function RoadmapPage({ checked, setChecked }) {
     setExpanded(isExpanded ? panel : false);
   };
 
-  function checkedChange() {
-    setChecked(
-      document.querySelectorAll("input[type=checkbox]:checked").length
-    );
-  }
+  const checkedChange = (e) => {
+    setChecked(!checked);
+  };
 
   return (
     <div>
       <Container maxWidth="md" sx={{ width: "50%", my: 4 }}>
         {articleContent.map((article, key) => (
           <Accordion
-            key={key}
+            key={article.id}
             expanded={expanded === `panel${key}`}
             onChange={handleChange(`panel${key}`)}
           >
@@ -41,13 +39,23 @@ function RoadmapPage({ checked, setChecked }) {
             </AccordionSummary>
 
             <AccordionDetails>
-              {article.content.map((i, key) => (
+              {article.content.map((text, key) => (
                 <FormControlLabel
                   key={key}
                   control={
-                    <Checkbox checked={checked[i]} onChange={checkedChange} />
+                    <Checkbox
+                      id={`${article.id}.${key}`}
+                      checked={checked[text]}
+                      onChange={(e) => {
+                        localStorage.setItem(
+                          e.target.id,
+                          `${e.target.checked}`
+                        );
+                        checkedChange(e.target.checked);
+                      }}
+                    />
                   }
-                  label={[i]}
+                  label={[text]}
                 />
               ))}
             </AccordionDetails>

@@ -8,9 +8,10 @@ function NavBar({ checked }) {
   const rating = useRef(0);
 
   rating.current =
-    (checked / document.querySelectorAll("input[type=checkbox]").length) * 5;
+    (document.querySelectorAll("input[type=checkbox]:checked").length /
+      document.querySelectorAll("input[type=checkbox]").length) *
+    5;
 
-  console.log(rating.current);
   return (
     <ThemeProvider theme={theme}>
       <AppBar position="relative">
@@ -19,9 +20,7 @@ function NavBar({ checked }) {
             <Button component={Link} to="/" sx={{ my: 2, color: "white" }}>
               Home
             </Button>
-            <Button component={Link} to="/about" sx={{ my: 2, color: "white" }}>
-              About
-            </Button>
+
             <Button
               component={Link}
               to="/roadmap"
