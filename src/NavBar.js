@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Button, Toolbar, Rating, Box } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
@@ -7,12 +7,11 @@ import { theme } from "./Theme";
 function NavBar({ checked }) {
   const rating = useRef(0);
 
-  useEffect(() => {
-    rating.current =
-      (checked / document.querySelectorAll("input[type=checkbox]").length) * 5;
-  }, [checked]);
+  rating.current =
+    (document.querySelectorAll("input[type=checkbox]:checked").length /
+      document.querySelectorAll("input[type=checkbox]").length) *
+    5;
 
-  console.log(rating.current);
   return (
     <ThemeProvider theme={theme}>
       <AppBar position="relative">
@@ -21,9 +20,7 @@ function NavBar({ checked }) {
             <Button component={Link} to="/" sx={{ my: 2, color: "white" }}>
               Home
             </Button>
-            <Button component={Link} to="/about" sx={{ my: 2, color: "white" }}>
-              About
-            </Button>
+
             <Button
               component={Link}
               to="/roadmap"
